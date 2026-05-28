@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*** GENERATED FROM project.xml - DO NOT EDIT  ***
+***         EDIT ../build.xml INSTEAD         ***
+-->
+<project name="GimnasioMVC-impl" basedir="..">
+    <property file="nbproject/private/private.properties"/>
+    <property file="nbproject/project.properties"/>
+    <fail message="Please build using Ant 1.7.1 or higher." unless="ant.1.7.1+"/>
+    <fail message="Properties not set - open project in NetBeans." unless="dist.jar"/>
+
+    <target name="default" depends="jar" description="Build and jar the project."/>
+
+    <target name="compile">
+        <mkdir dir="${build.classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.classes.dir}"
+               source="${javac.source}" target="${javac.target}"
+               encoding="${source.encoding}" includeantruntime="false"
+               debug="true" debuglevel="lines,vars,source">
+            <classpath path="${javac.classpath}"/>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.jar}" basedir="${build.classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="${dist.jar}" fork="true"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+</project>

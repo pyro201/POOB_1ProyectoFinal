@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- INSTRUCCIÓN: Proyecto NetBeans - Java Application -->
+<project name="GimnasioMVC" default="default" basedir=".">
+    <description>Sistema de Monitoreo de Gimnasios y Planes de Suscripción</description>
+    <import file="nbproject/build-impl.xml"/>
+</project>
